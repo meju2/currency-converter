@@ -6,11 +6,11 @@ const dropList = document.querySelectorAll("form select"),
 for (let i = 0; i < dropList.length; i++) {
   for (let currency_code in country_list) {
     let selected =
-      i == 0
-        ? currency_code == "PLN"
+      i === 0
+        ? currency_code === "PLN"
           ? "selected"
           : ""
-        : currency_code == "USD"
+        : currency_code === "USD"
         ? "selected"
         : "";
     let optionTag = `<option value="${currency_code}" ${selected}>${currency_code}</option>`;
@@ -23,7 +23,7 @@ for (let i = 0; i < dropList.length; i++) {
 
 function loadFlag(element) {
   for (let code in country_list) {
-    if (code == element.value) {
+    if (code === element.value) {
       let imgTag = element.parentElement.querySelector("img");
       imgTag.src = `https://flagcdn.com/48x36/${country_list[
         code
