@@ -71,4 +71,6 @@ function getExchangeRate() {
     .catch(() => {
       exchangeRateTxt.innerText = "Something went wrong";
     });
+
+    console.log("test")
 }
